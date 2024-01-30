@@ -45,7 +45,7 @@ body {
   font-size: 1.5em;
   color: rgb(88 199 250 / 0%);
   cursor: pointer;
-    font-family: cursive;
+  font-family: cursive;
 }
 
 .card:hover {
@@ -119,12 +119,21 @@ input {
 }
 #shaolin{
   display: none;
+  animation: fadeInAnimation 3s ease-in forwards;
 }
 #tanu{
   display: none;
   font-size: 5vh;
+  animation: fadeInAnimation 3s ease-in forwards;
 }
-
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 </style>
 <body>
 
@@ -138,7 +147,7 @@ input {
     </div>
   </div>
   <div id="shaolin">
-    Card
+    Gojo Satoru 🔮
   </div>
   <div id="tanu">
     💫✨💖💐🥀🌈🌲🌿🕊️🐾🍒🎀🎈🎁🪅🎋🏸🔮🧋🍰🍨👒💎
