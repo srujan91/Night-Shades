@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Magic Card</title>
+  <title>Dark Hold</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <style>
@@ -33,8 +33,8 @@ body {
 
 .card {
   background: #191c29;
-  width: var(--card-width);
-  height: var(--card-height);
+  width: 75%;
+  height: 450px;
   padding: 3px;
   position: relative;
   border-radius: 6px;
@@ -45,17 +45,13 @@ body {
   font-size: 1.5em;
   color: rgb(88 199 250 / 0%);
   cursor: pointer;
-  font-family: cursive;
+    font-family: cursive;
 }
 
 .card:hover {
   color: rgb(88 199 250 / 100%);
-  transition: color 1s;
 }
-.card:hover:before, .card:hover:after {
-  animation: none;
-  opacity: 0;
-}
+
 
 
 .card::before {
@@ -71,26 +67,6 @@ body {
     top: -1%;
     left: -2%;
     animation: spin 2.5s linear infinite;
-}
-
-.card::after {
-  position: absolute;
-  content: "";
-  top: calc(var(--card-height) / 6);
-  left: 0;
-  right: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-  transform: scale(0.8);
-  filter: blur(calc(var(--card-height) / 6));
-  background-image: linear-gradient(
-    var(--rotate)
-    , #5ddcff, #3c67e3 43%, #4e00c2);
-    opacity: 1;
-  transition: opacity .5s;
-  animation: spin 2.5s linear infinite;
 }
 
 @keyframes spin {
@@ -109,12 +85,83 @@ a {
   font-weight: bold;
   margin-top: 2rem;
   }
+  
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  width: 75%;
+  color: cyan;
+  text-align: center;
+  font-family: cursive;
+}
+.neon-button {
+    background-color: transparent;
+    margin: 5px;
+    border: none;
+    color: cyan;
+    padding: 10px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none; /* Remove default focus outline */
+    position: relative;
+    overflow: hidden;
+    transition: color 1s ease;
+}
+.neon-button:hover {
+  color: #00000000;
+}
+.neon-button:active{
+  color: #00000000;
+}
+#shaolin{
+  display: none;
+}
+#tanu{
+  display: none;
+  font-size: 5vh;
+}
+
 </style>
 <body>
 
 <div class="card">
-  Magic Card Content
+  <div id="log">
+    <div>
+      <input type="text" id="pass">
+      <div>
+        <button type="submit" class="neon-button" onclick="protectpasscode()" id="button">Enter</button>
+      </div>
+    </div>
+  </div>
+  <div id="shaolin">
+    Card
+  </div>
+  <div id="tanu">
+    💫✨💖💐🥀🌈🌲🌿🕊️🐾🍒🎀🎈🎁🪅🎋🏸🔮🧋🍰🍨👒💎
+  </div>
 </div>
 
+<script>
+function protectpasscode() {
+  const result = document.getElementById("pass").value;
+  let passcode1 = "Hinata";
+  let passcode2 = "@Tanu";
+  let space = '';
+    if (result == passcode1) {
+      document.getElementById("shaolin").style.display = "block";
+      document.getElementById("pass").style.display = "none";
+      document.getElementById("button").style.display = "none";
+    }
+    if (result == passcode2) {
+      document.getElementById("tanu").style.display = "block";
+      document.getElementById("pass").style.display = "none";
+      document.getElementById("button").style.display = "none";
+    }
+  }
+</script>
 </body>
 </html>
