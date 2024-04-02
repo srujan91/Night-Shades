@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Prompt</title>
+    <script>
+        window.onload = function() {
+            var password = prompt("Please enter the password:");
+            // Check if the entered password is correct
+            if (password !== "red") {
+                alert("Incorrect password. Please try again.");
+                window.location.reload(); // Reload the page if the password is incorrect
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Your content goes here -->
+    <h1>Welcome to the page!</h1>
+    <!-- Add your content below -->
+</body>
+</html>
