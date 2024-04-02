@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Night Shades</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{
+  border: solid white;
+  background-color: black;
+  color: white;
+  border-radius: 2vh;
+}
+hr{
+  width: 25vh;
+  border: none;
+  border-top: 2px solid #333;
+}
+.head, .body{
+  margin: 2vh;
+  border: solid gray;
+  border-radius: 1vh;
+}
+.body{
+  margin: 2vh;
+  border-radius: 1vh;
+}
+.head, .body{
+    text-align: center;
+}
+.body h3{
+  margin: 1.5vh;
+}
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="head">
+      <h1>~Reveal~</h1>
+    </div>
+    <div class="body">
+      <div id="1">
+        <h3 onclick="redirectToRules()">Rules of Life 🔪</h3>
+      </div>
+      <hr>
+      <div id="2">
+        <h3></h3>
+      </div>
+      <div id="3">
+        <h3></h3>
+      </div>
+    </div>
+  </div>
+  <script>
+  window.onload = function() {
+            var password = prompt("Please enter the password:");
+            if (password !== "ok") {
+                window.location.href = "error";
+            }
+        };
+        
+  function redirectToRules() {
+    window.location.href = "rules.html";
+  }
+  </script>
+</body>
+
+</html>
