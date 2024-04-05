@@ -30,12 +30,12 @@
   }
   .main .d1 p{
     opacity: 0;
-    animation: fadeIn 3s ease-in forwards;
+    animation: fadeIn 2s ease-in forwards;
     animation-delay: 1s;
   }
   .main .d2 p{
     opacity: 0;
-    animation: fadeIn 3s ease-in forwards;
+    animation: fadeIn 2s ease-in forwards;
     animation-delay: 2s;
   }
 
@@ -47,9 +47,22 @@
          opacity: 1;
       }
   }
+  #video-background {
+    position: fixed;
+    z-index: -1000;
+    width: auto;
+    height: 90vh;
+    animation: fadeIn 10s ease-in forwards;
+    animation-delay: 0s;
+    opacity: 0.5;
+  }
   </style>
 </head>
 <body>
+  <video autoplay muted loop id="video-background">
+    <source src="rbg.mp4" type="video/mp4">
+  </video>
+  
   <div class="main">
     <div class="all d1">
       <p id="1">Rules that to be a Royal</p>
