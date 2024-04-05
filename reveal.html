@@ -23,16 +23,49 @@
     text-align: center;
     font-size: 3vh;
   }
+  .main{
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    animation-delay: 0s;
+  }
+  .main .d1 p{
+    opacity: 0;
+    animation: fadeIn 3s ease-in forwards;
+    animation-delay: 1s;
+  }
+  .main .d2 p{
+    opacity: 0;
+    animation: fadeIn 3s ease-in forwards;
+    animation-delay: 2s;
+  }
+
+  @keyframes fadeIn {
+      from {
+         opacity: 0;
+      }
+      to {
+         opacity: 1;
+      }
+  }
   </style>
 </head>
 <body>
   <div class="main">
-    <div id="1" class="all">
-      <p>Rules that to be a Royal</p>
+    <div class="all d1">
+      <p id="1">Rules that to be a Royal</p>
     </div>
-    <div id="2" class="all">
-      <p>Lost in a world of Music where dreams are heaven</p>
+    <div class="all d2">
+      <p id="2">Lost in a world of Music where dreams are heaven</p>
     </div>
   </div>
+  <script>
+  document.getElementById("1").addEventListener("click", function() {
+    window.location.href = "royal.html";
+  });
+  
+  document.getElementById("2").addEventListener("click", function() {
+    window.location.href = "music.html";
+  });
+</script>
 </body>
 </html>
