@@ -3,171 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Hold</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#000000">
+  <title>DarkHold</title>
 </head>
 <style>
-  @property --rotate {
-  syntax: "<angle>";
-  initial-value: 132deg;
-  inherits: false;
-}
-
-:root {
-  --card-height: 65vh;
-  --card-width: calc(var(--card-height) / 1.5);
-}
-
-
-body {
-  min-height: 100vh;
-  background: #212534;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  box-sizing: border-box;
-}
-
-
-.card {
-  background: #191c29;
-  width: 75%;
-  height: 450px;
-  padding: 3px;
-  position: relative;
-  border-radius: 6px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  display: flex;
-  font-size: 1.5em;
-  color: rgb(88 199 250 / 0%);
-  cursor: pointer;
-  font-family: cursive;
-}
-
-.card:hover {
-  color: rgb(88 199 250 / 100%);
-}
-
-
-
-.card::before {
-  content: "";
-  width: 104%;
-  height: 102%;
-  border-radius: 8px;
-  background-image: linear-gradient(
-    var(--rotate)
-    , #5ddcff, #3c67e3 43%, #4e00c2);
+  body{
+    padding: 0;
+    margin: 0;
+    background: black;
+    color: gray;
+    font-family: Verdana;
+  }
+  .container{
     position: absolute;
-    z-index: -1;
-    top: -1%;
-    left: -2%;
-    animation: spin 2.5s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    --rotate: 0deg;
+    margin: 2vh;
+    top: 25%;
+    text-align: center;
+    font-weight: 100;
   }
-  100% {
-    --rotate: 360deg;
-  }
-}
-
-a {
-  color: #212534;
-  text-decoration: none;
-  font-family: sans-serif;
-  font-weight: bold;
-  margin-top: 2rem;
-  }
-  
-input {
-  border: none;
-  outline: none;
-  background-color: transparent;
-  border-bottom: 1px solid white;
-  width: 75%;
-  color: cyan;
-  text-align: center;
-  font-family: cursive;
-}
-.neon-button {
-    background-color: transparent;
-    margin: 5px;
-    border: none;
-    color: cyan;
-    padding: 10px 20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    outline: none; /* Remove default focus outline */
-    position: relative;
-    overflow: hidden;
-    transition: color 1s ease;
-}
-.neon-button:hover {
-  color: #00000000;
-}
-.neon-button:active{
-  color: #00000000;
-}
-#shaolin{
-  display: none;
-  animation: fadeInAnimation 3s ease-in forwards;
-}
-#tanu{
-  display: none;
-  font-size: 5vh;
-  animation: fadeInAnimation 3s ease-in forwards;
-}
-@keyframes fadeInAnimation {
-  from {
+  .content{
     opacity: 0;
+    animation: fadeIn ease-in 2s forwards;
   }
-  to {
-    opacity: 1;
-  }
-}
-</style>
-<body>
-
-<div class="card">
-  <div id="log">
-    <div>
-      <input type="text" id="pass">
-      <div>
-        <button type="submit" class="neon-button" onclick="protectpasscode()" id="button">Enter</button>
-      </div>
-    </div>
-  </div>
-  <div id="shaolin">
-    Gojo Satoru 🔮
-  </div>
-  <div id="tanu">
-    💫✨💖💐🥀🌈🌲🌿🕊️🐾🍒🎀🎈🎁🪅🎋🏸🔮🧋🍰🍨👒💎
-  </div>
-</div>
-
-<script>
-function protectpasscode() {
-  const result = document.getElementById("pass").value;
-  let passcode1 = "Reveal";
-  let passcode2 = "@Tanu";
-  let space = '';
-    if (result == passcode1) {
-      window.location.href = "reveal.html";}
-    if (result == passcode2) {
-      document.getElementById("tanu").style.display = "block";
-      document.getElementById("pass").style.display = "none";
-      document.getElementById("button").style.display = "none";
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
-</script>
+  #all{
+   font-size: 4vh;
+   letter-spacing: 1vh;
+  }
+  #w{
+    animation: w ease-in 1s forwards;
+    animation-delay: 3s;
+    color: gray;
+  }
+  @keyframes w {
+    0% {
+      color: gray;
+    }
+    100% {
+      color: white;
+      text-shadow: 
+     0 0 5px white,
+     0 0 10px white,
+     0 0 20px white;
+    }
+  }
+  #dh{
+    animation: dh ease-in 1s forwards;
+    animation-delay: 5s;
+    color: gray;
+  }
+  @keyframes dh {
+    0% {
+      color: gray;
+    }
+    100% {
+      color: red;
+      text-shadow: 
+     0 0 5px red,
+     0 0 10px red,
+     0 0 20px red;
+    }
+  }
+  #l{
+    animation: l ease-in 1s forwards;
+     animation-delay: 7s;
+     color: gray;
+  }
+  @keyframes l {
+    0% {
+      color: gray;
+    }
+    100% {
+      color: lightgreen;
+      text-shadow: 
+     0 0 5px lightgreen,
+     0 0 10px lightgreen,
+     0 0 20px lightgreen;
+    }
+  }
+  #voe{
+    animation: voe ease-in 1s forwards;
+     animation-delay: 9s;
+     color: gray;
+  }
+  @keyframes voe {
+    0% {
+      color: gray;
+    }
+    100% {
+      color: violet;
+      text-shadow: 
+     0 0 5px violet,
+     0 0 10px violet,
+     0 0 20px violet;
+    }
+  }
+</style>
+<body>
+  <div class="container">
+    <div class="content">
+      <span id="all">
+        <span id="1">The <span id="w">Way</span> of <span id="dh">DarkHold</span></span>
+         <br><br><span id="2">who <span id="l">Leads</span> on the </span><span id="voe">
+          <br><br><span id="3">Verge of Eternity</span></span>
+      </span>
+    </div>
+  </div>
 </body>
 </html>
